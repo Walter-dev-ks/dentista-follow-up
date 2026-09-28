@@ -1,6 +1,6 @@
 # Sorriso — acompanhamento de leads
 
-Painel web simples para clínicas odontológicas organizarem leads, retornos e agendamentos. A primeira versão não envia mensagens automaticamente e não usa IA ou integração com WhatsApp.
+Painel web simples para clínicas odontológicas organizarem leads, retornos e agendamentos. A equipe pode preparar uma mensagem com base em um modelo e abrir a conversa do paciente no WhatsApp; o envio continua manual. Não usa IA nem automação ou API do WhatsApp.
 
 ## Demonstração rápida
 
@@ -29,8 +29,12 @@ Para testar localmente no Windows, abra um terminal nesta pasta e execute `py -m
 - Cadastro e acompanhamento de leads, tarefas, status e modelos de mensagem.
 - Dashboard para visualizar pendências e agendamentos.
 - Edição de dados básicos da clínica pelo responsável, perfil da conta e senha.
+- Tema escuro padrão, com opção de alternar para o tema claro.
 - Criação, edição, cópia e exclusão de modelos de mensagem por clínica.
+- Abertura manual do WhatsApp do lead com modelo selecionado e variáveis `{{nome}}` e `{{interesse}}` preenchidas.
 - Demonstração com registros fictícios, sem necessidade de conta.
-- Contato manual: a equipe copia o modelo e envia pelo canal já usado pela clínica.
+- Campo de referência para o telefone da clínica; o destino da conversa é o telefone cadastrado no lead.
+
+Ao tocar em **Abrir WhatsApp**, o sistema abre `wa.me` para o número do lead e deixa o texto pronto para a equipe revisar e enviar. O sistema nunca dispara a mensagem sozinho. O número da clínica em Configurações é informativo nesta versão; a conversa é iniciada pela conta WhatsApp já conectada no dispositivo.
 
 Antes de usar dados de pacientes reais, revise privacidade, consentimento, acesso dos usuários e retenção com a clínica. Integração oficial com WhatsApp, mensagens automáticas, convites de equipe e recuperação de senha não fazem parte desta versão.

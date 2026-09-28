@@ -3,6 +3,7 @@ create extension if not exists pgcrypto;
 create table public.clinics (
   id uuid primary key default gen_random_uuid(),
   name text not null,
+  whatsapp_phone text,
   created_at timestamptz not null default now()
 );
 
