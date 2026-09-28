@@ -6,9 +6,9 @@ Painel web simples para clínicas odontológicas organizarem leads, retornos e a
 
 1. Publique este repositório como site estático na Vercel, ou sirva a pasta localmente por HTTP.
 2. Abra o site e escolha **Explorar demonstração com dados fictícios**.
-3. Cadastre um lead, defina um retorno, conclua o contato e marque o agendamento.
+3. Explore o dashboard, leads, follow-ups, modelos, configurações e dúvidas frequentes.
 
-Os dados da demonstração ficam no navegador e não são compartilhados com a clínica.
+A demonstração usa exemplos fictícios somente para consulta. Os formulários podem ser visualizados, mas não salvam alterações; nenhuma informação pessoal armazenada anteriormente no navegador é carregada para essa demonstração.
 
 ## Conectar ao Supabase
 
@@ -30,8 +30,12 @@ Para testar localmente no Windows, abra um terminal nesta pasta e execute `py -m
 - Dashboard para visualizar pendências e agendamentos.
 - Edição de dados básicos da clínica pelo responsável, perfil da conta e senha.
 - Tema escuro padrão, com opção de alternar para o tema claro.
+- Cores de destaque configuráveis nas preferências.
 - Criação, edição, cópia e exclusão de modelos de mensagem por clínica.
+- Botões de inserção para as variáveis `{{nome}}` e `{{interesse}}` ao criar modelos.
 - Abertura manual do WhatsApp do lead com modelo selecionado e variáveis `{{nome}}` e `{{interesse}}` preenchidas.
+- Exclusão de leads com confirmação e remoção dos retornos associados.
+- Demonstração em modo somente leitura e página de dúvidas frequentes.
 - Demonstração com registros fictícios, sem necessidade de conta.
 - Campo de referência para o telefone da clínica; o destino da conversa é o telefone cadastrado no lead.
 
