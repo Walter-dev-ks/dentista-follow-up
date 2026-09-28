@@ -87,6 +87,23 @@ $$;
 revoke all on function private.is_clinic_member(uuid) from public, anon;
 grant execute on function private.is_clinic_member(uuid) to authenticated;
 
+create or replace function private.is_clinic_owner(target_clinic_id uuid)
+returns boolean
+language sql
+security definer
+stable
+set search_path = ''
+as $$
+  select exists (
+    select 1 from public.clinic_members m
+    where m.clinic_id = target_clinic_id
+      and m.user_id = (select auth.uid())
+      and m.role = 'owner'
+  );
+$$;
+revoke all on function private.is_clinic_owner(uuid) from public, anon;
+grant execute on function private.is_clinic_owner(uuid) to authenticated;
+
 create or replace function private.create_clinic_for_current_user(clinic_name text)
 returns uuid
 language plpgsql
@@ -143,6 +160,9 @@ alter table public.message_templates enable row level security;
 
 create policy "Members can view their clinics" on public.clinics
   for select to authenticated using (private.is_clinic_member(id));
+create policy "Owners can update their clinics" on public.clinics
+  for update to authenticated using (private.is_clinic_owner(id))
+  with check (private.is_clinic_owner(id));
 create policy "Members can view clinic membership" on public.clinic_members
   for select to authenticated using (private.is_clinic_member(clinic_id));
 create policy "Members can read leads" on public.leads
@@ -170,5 +190,6 @@ create policy "Members can manage templates" on public.message_templates
   with check (private.is_clinic_member(clinic_id));
 
 grant select on public.clinics, public.clinic_members to authenticated;
+grant update on public.clinics to authenticated;
 grant select, insert, update, delete on public.leads, public.tasks, public.message_templates to authenticated;
 grant select, insert on public.lead_events to authenticated;

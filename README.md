@@ -28,6 +28,8 @@ Para testar localmente no Windows, abra um terminal nesta pasta e execute `py -m
 - Separação de dados por clínica com PostgreSQL e políticas RLS.
 - Cadastro e acompanhamento de leads, tarefas, status e modelos de mensagem.
 - Dashboard para visualizar pendências e agendamentos.
+- Edição de dados básicos da clínica pelo responsável, perfil da conta e senha.
+- Criação, edição, cópia e exclusão de modelos de mensagem por clínica.
 - Demonstração com registros fictícios, sem necessidade de conta.
 - Contato manual: a equipe copia o modelo e envia pelo canal já usado pela clínica.
 
