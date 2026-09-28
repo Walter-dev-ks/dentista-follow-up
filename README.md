@@ -30,7 +30,7 @@ Para testar localmente no Windows, abra um terminal nesta pasta e execute `py -m
 - Dashboard para visualizar pendências e agendamentos.
 - Edição de dados básicos da clínica pelo responsável, perfil da conta e senha.
 - Tema escuro padrão, com opção de alternar para o tema claro.
-- Cores de destaque configuráveis nas preferências.
+- Paletas completas configuráveis, incluindo fundos e superfícies do tema escuro.
 - Criação, edição, cópia e exclusão de modelos de mensagem por clínica.
 - Botões de inserção para as variáveis `{{nome}}` e `{{interesse}}` ao criar modelos.
 - Abertura manual do WhatsApp do lead com modelo selecionado e variáveis `{{nome}}` e `{{interesse}}` preenchidas.
